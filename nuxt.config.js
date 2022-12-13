@@ -32,7 +32,7 @@ export default {
     '@nuxt/typescript-build',
     '@nuxt/postcss8',
     '@nuxtjs/style-resources',
-    '@nuxtjs/composition-api/module',
+    '@nuxtjs/svg',
   ],
   styleResources: {
     scss: ['@/assets/scss/variables.scss', '@/assets/scss/mixins.scss'],
@@ -56,6 +56,17 @@ export default {
         tailwindcss: {},
         autoprefixer: {},
       },
+    },
+  },
+  svg: {
+    vueSvgLoader: {
+      // vue-svg-loader options
+    },
+    svgSpriteLoader: {
+      // svg-sprite-loader options
+    },
+    fileLoader: {
+      // file-loader options
     },
   },
 }

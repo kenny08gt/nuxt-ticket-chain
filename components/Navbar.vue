@@ -11,6 +11,7 @@
         <button
           type="button"
           class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          v-on:click="toggleMobileMenu"
         >
           <span class="sr-only">Open main menu</span>
           <!-- Heroicon name: outline/bars-3 -->
@@ -62,19 +63,25 @@
     <div role="dialog" aria-modal="true">
       <div
         focus="true"
-        class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
+        class="mobileMeu fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6"
+        v-show="showMobileMenu"
       >
         <div class="flex h-9 items-center justify-between">
           <div class="flex">
-            <a href="#" class="-m-1.5 p-1.5">
+            <a href="#" class="-m-1.5 lg:p-1.5">
               <span class="sr-only">Your Company</span>
-              <img class="h-[16rem]" src="~assets/logo.svg" alt="" />
+              <img
+                class="lg:h-[16rem] h-[4rem]"
+                src="~assets/logo.svg"
+                alt=""
+              />
             </a>
           </div>
           <div class="flex">
             <button
               type="button"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              v-on:click="toggleMobileMenu"
             >
               <span class="sr-only">Close menu</span>
               <!-- Heroicon name: outline/x-mark -->
@@ -144,5 +151,17 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Navbar',
+  data: function () {
+    return {
+      showMobileMenu: false,
+    }
+  },
+  methods: {
+    toggleMobileMenu: function () {
+      console.log('cliciiicici')
+
+      this.showMobileMenu = !this.showMobileMenu
+    },
+  },
 })
 </script>

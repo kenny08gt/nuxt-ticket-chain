@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-ticket-chain',
+    title: 'Ticketchain',
     htmlAttrs: {
       lang: 'en',
     },
@@ -31,8 +31,12 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxt/postcss8',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/composition-api/module',
   ],
-
+  styleResources: {
+    scss: ['@/assets/scss/variables.scss', '@/assets/scss/mixins.scss'],
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
